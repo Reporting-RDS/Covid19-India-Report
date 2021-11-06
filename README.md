@@ -21,6 +21,8 @@ plt.ylabel('Confirmed')
 plt.show()
 
 #train the data with linear regression algorithm
+X = df['Cured'].values.reshape(-1,1)
+y = df['Confirmed'].values.reshape(-1,1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_state=0)
 regressor = LinearRegression()  
 regressor.fit(X_train, y_train) #training the algorithm
